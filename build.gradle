@@ -50,6 +50,7 @@ signing {
 	required { gradle.taskGraph.hasTask('generateRelease') }
 }
 
+/*
 uploadArchives {
 	repositories {
 		project.ext.deployer=repositories.mavenDeployer {
@@ -97,6 +98,7 @@ uploadArchives {
 		}
 	}
 }
+*/
 
 task generateRelease(dependsOn:uploadArchives, group: "Release artifact",
   description: "Generates and uploads a final release to Sonatype Nexus")

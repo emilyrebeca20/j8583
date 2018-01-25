@@ -11,7 +11,7 @@
 <header type="0410" ref="0210" />
 <header type="0800">ISO015000015</header>
 <header type="0810" ref="0800"/>
-<header type="0280" binary="true">ffffffff</header>
+<!-- <header type="0280" binary="true">ffffffff</header> -->
 
 <!-- The client example uses this to create requests -->
 <template type="0200">

@@ -41,8 +41,6 @@ public enum IsoType {
 	LLVAR(false, 0),
 	/** A variable length alphanumeric value with a 3-digit header length. */
 	LLLVAR(false, 0),
-	/** A date in format YYYYMMddHHmmss */
-	DATE14(false, 14),
 	/** A date in format MMddHHmmss */
 	DATE10(false, 10),
 	/** A date in format MMdd */
@@ -64,7 +62,10 @@ public enum IsoType {
     /** variable length byte array with 4-digit header length. */
     LLLLBIN(false, 0),
     /** Date in format yyMMddHHmmss. */
-   	DATE12(false,12);
+   	DATE12(false,12),
+	/** A date in format YYYYMMddHHmmss */
+	DATE14(false, 14)
+    ;
 
 	private boolean needsLen;
 	private int length;

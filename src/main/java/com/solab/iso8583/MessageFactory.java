@@ -429,25 +429,25 @@ public class MessageFactory<T extends IsoMessage> {
 		//Parse each field
 		Map<Integer, FieldParseInfo> parseGuide = parseMap.get(type);
 		List<Integer> index = parseOrder.get(type);
-		if (index == null) {
-			log.error(String.format("ISO8583 MessageFactory has no parsing guide for message type %04x [%s]",
-				type, new String(buf)));
-			throw new ParseException(String.format(
-					"ISO8583 MessageFactory has no parsing guide for message type %04x [%s]",
-					type,
-					new String(buf)), 0);
-		}
-		//First we check if the message contains fields not specified in the parsing template
-		boolean abandon = false;
-		for (int i = 1; i < bs.length(); i++) {
-			if (bs.get(i) && !index.contains(i+1)) {
-				log.warn("ISO8583 MessageFactory cannot parse field {}: unspecified in parsing guide", i+1);
-				abandon = true;
-			}
-		}
-		if (abandon) {
-			throw new ParseException("ISO8583 MessageFactory cannot parse fields", 0);
-		}
+//		if (index == null) {
+//			log.error(String.format("ISO8583 MessageFactory has no parsing guide for message type %04x [%s]",
+//				type, new String(buf)));
+//			throw new ParseException(String.format(
+//					"ISO8583 MessageFactory has no parsing guide for message type %04x [%s]",
+//					type,
+//					new String(buf)), 0);
+//		}
+//		//First we check if the message contains fields not specified in the parsing template
+//		boolean abandon = false;
+//		for (int i = 1; i < bs.length(); i++) {
+//			if (bs.get(i) && !index.contains(i+1)) {
+//				log.warn("ISO8583 MessageFactory cannot parse field {}: unspecified in parsing guide", i+1);
+//				abandon = true;
+//			}
+//		}
+//		if (abandon) {
+//			throw new ParseException("ISO8583 MessageFactory cannot parse fields", 0);
+//		}
 		//Now we parse each field
 		if (useBinary) {
 			for (Integer i : index) {
